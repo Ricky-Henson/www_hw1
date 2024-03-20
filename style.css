@@ -1,0 +1,383 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  background-color: #333;
+  height: 3%;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Add padding to the left and right */
+}
+
+nav ul li {
+  margin-right: 20px;
+  min-height: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  transition: all 0.1s ease;
+}
+
+nav ul li a:hover {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+  position: relative;
+  top: -6px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  font-weight: bold;
+  font-style: italic;
+  display: none;
+  position: absolute;
+  background-color: #555; /* Set your desired background color */
+  min-width: 200px;
+  padding: 10px;
+  z-index: 100;
+  top: 65%; /* Position the dropdown content below the dropdown item */
+  left: 0;
+  border-radius: 5px; /* Add border radius for a rounded look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.dropdown-content a {
+  display: block; /* Display each dropdown item as a block element */
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.1s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #444; /* Set hover background color */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.home-content {
+  margin-top: 4%; /* Adjust the margin to leave space for the header */
+  padding: 20px;
+}
+
+.rotating-images {
+  margin-top: 1%; /* Leave space for the header */
+  margin-bottom: 5%;
+  height: 300px; /* Set a fixed height for the carousel */
+  overflow: hidden;
+  position: relative;
+}
+
+.rotating-images img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  opacity: 0; /* Initially hide all images */
+  animation: rotateImages 60s infinite linear;
+}
+
+.rotating-images img:nth-child(1) {
+  animation-delay: 0s; /* Delay for the first image */
+}
+
+.rotating-images img:nth-child(2) {
+  animation-delay: 10s; /* Delay for the second image */
+}
+
+.rotating-images img:nth-child(3) {
+  animation-delay: 20s; /* Delay for the third image */
+}
+
+.rotating-images img:nth-child(4) {
+  animation-delay: 30s; /* Delay for the fourth image */
+}
+
+.rotating-images img:nth-child(5) {
+  animation-delay: 40s; /* Delay for the fifth image */
+}
+
+.rotating-images img:nth-child(6) {
+  animation-delay: 50s; /* Delay for the sixth image */
+}
+
+@keyframes rotateImages {
+  0% {
+    opacity: 0;
+  }
+  16.666% {
+    opacity: 1;
+  }
+  33.333% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  66.666% {
+    opacity: 1;
+  }
+  83.333% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.welcome-title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  animation: revealText 0.5s forwards;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.word:nth-child(1) {
+  animation-delay: 0s;
+}
+.word:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.word:nth-child(3) {
+  animation-delay: 1s;
+}
+.word:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.word:nth-child(5) {
+  animation-delay: 2s;
+}
+.word:nth-child(6) {
+  animation-delay: 2.5s;
+}
+
+.section {
+  display: flex;
+  align-items: flex-start; /* Align items at the start (top) of the flex container */
+  margin-top: 3%;
+}
+
+.section-image {
+  flex: 1; /* Take up half of the available space */
+  margin-right: 20px; /* Add margin between image and text */
+}
+
+.section-image img {
+  width: 100%; /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.section-details {
+  flex: 1; /* Take up half of the available space */
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-content {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.google-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.google-map h2 {
+  text-align: center;
+}
+
+.google-map iframe {
+  width: 70%;
+  height: 400px;
+}
+
+footer {
+  background-color: #333; /* Set background color */
+  color: white;
+  text-align: center;
+  padding: 2px 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

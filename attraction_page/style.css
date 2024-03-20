@@ -1,0 +1,366 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  background-color: #333;
+  height: 3%;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Add padding to the left and right */
+}
+
+nav ul li {
+  margin-right: 20px;
+  min-height: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  transition: all 0.1s ease;
+}
+
+nav ul li a:hover {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+  position: relative;
+  top: -6px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  font-weight: bold;
+  font-style: italic;
+  display: none;
+  position: absolute;
+  background-color: #555; /* Set your desired background color */
+  min-width: 200px;
+  padding: 10px;
+  z-index: 100;
+  top: 65%; /* Position the dropdown content below the dropdown item */
+  left: 0;
+  border-radius: 5px; /* Add border radius for a rounded look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.dropdown-content a {
+  display: block; /* Display each dropdown item as a block element */
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.1s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #444; /* Set hover background color */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.attraction {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  transition: transform 1.5s, visibility 1.5s, opacity 1.5s ease-in-out;
+}
+
+.info-top,
+.info-bottom {
+  visibility: hidden; /* Hide the info sections initially */
+  position: absolute;
+  opacity: 0; /* Start invisible */
+  transition: transform 1.5s, visibility 1.5s, opacity 1.5s ease-in-out;
+}
+
+.info-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 35px;
+}
+
+.info-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden; /* hides any child content or elements that are outside the parent's boundaries. This is useful when you want to clip off any overflowing content, especially when the parent has rounded corners (border-radius) */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.attraction-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* scales the image to cover both the height and width of its container, while maintaining its aspect ratio. It will cut off any excess parts of the image if the aspect ratios of the image and its container are different. This is useful for creating a consistent layout even when dealing with images of varying sizes and aspect ratios */
+}
+
+.attraction:hover .info-top {
+  visibility: visible; /* Show the info sections when the attraction is hovered over */
+  transform: translateX(-250px);
+  opacity: 1;
+}
+
+.attraction:hover .info-bottom {
+  visibility: visible; /* Show the info sections when the attraction is hovered over */
+  transform: translateX(550px);
+  opacity: 1;
+}
+
+.attraction:hover {
+  transform: translateX(-350px);
+  transition: transform 1.5s;
+}
+
+.attraction-name {
+  width: 50px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.attraction-intro {
+  width: 500px;
+  padding: 20px;
+}
+
+.attraction-intro h4 {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.attraction-intro p {
+  font-size: 20px;
+  text-align: justify;
+  width: 120%;
+  margin-left: 150px;
+  margin-bottom: 5px;
+}
+
+.attraction:nth-of-type(2):hover .info-top {
+  visibility: visible; /* Show the info sections when the attraction is hovered over */
+  transform: translateX(250px);
+  opacity: 1;
+}
+
+.attraction:nth-of-type(2):hover .info-bottom {
+  visibility: visible; /* Show the info sections when the attraction is hovered over */
+  transform: translateX(-800px);
+  opacity: 1;
+}
+
+.attraction:nth-of-type(2):hover {
+  transform: translateX(350px); /* Move the image to the left */
+  transition: transform 1.5s; /* Add a transition */
+}
+
+@media (max-width: 1024px) {
+  .attraction-intro {
+    width: 400px;
+  }
+
+  .attraction-intro p {
+    width: 100%;
+  }
+
+  .attraction:hover .info-bottom {
+    visibility: visible; /* Show the info sections when the attraction is hovered over */
+    transform: translateX(370px);
+    opacity: 1;
+  }
+
+  .attraction:hover {
+    transform: translateX(-240px);
+    transition: transform 1.5s; /* Add a transition */
+  }
+
+  .attraction:nth-of-type(2):hover .info-top {
+    visibility: visible; /* Show the info sections when the attraction is hovered over */
+    transform: translateX(200px);
+    opacity: 1;
+  }
+
+  .attraction:nth-of-type(2):hover .info-bottom {
+    visibility: visible; /* Show the info sections when the attraction is hovered over */
+    transform: translateX(-560px);
+    opacity: 1;
+  }
+
+  .attraction:nth-of-type(2):hover {
+    transform: translateX(250px); /* Move the image to the left */
+    transition: transform 1.5s; /* Add a transition */
+  }
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #333; /* Set background color */
+  color: white;
+  text-align: center;
+  padding: 2px 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

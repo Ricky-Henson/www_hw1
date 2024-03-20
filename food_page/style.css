@@ -1,0 +1,374 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  display: flex;
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  background-color: #333;
+  height: 3%;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Add padding to the left and right */
+}
+
+nav ul li {
+  margin-right: 20px;
+  min-height: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  transition: all 0.1s ease;
+}
+
+nav ul li a:hover {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+  position: relative;
+  top: -6px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  font-weight: bold;
+  font-style: italic;
+  display: none;
+  position: absolute;
+  background-color: #555; /* Set your desired background color */
+  min-width: 200px;
+  padding: 10px;
+  z-index: 100;
+  top: 65%; /* Position the dropdown content below the dropdown item */
+  left: 0;
+  border-radius: 5px; /* Add border radius for a rounded look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.dropdown-content a {
+  display: block; /* Display each dropdown item as a block element */
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.1s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #444; /* Set hover background color */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.food-item {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  margin: 20px auto;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(207, 81, 81, 0.2);
+  transition: transform 0.3s; /* Added transition for smooth rotation */
+  margin-top: 100px;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.pin {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.food-info {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.food-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  overflow: hidden;
+}
+
+.food-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.map-pin {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.restaurant-info {
+  width: 100%;
+  height: 180px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  margin-bottom: 15px;
+  background: linear-gradient(to bottom, #fff 96%, #eee 4%);
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.top-info {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.bottom-info {
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.bottom-info div {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  margin-bottom: 5px;
+}
+
+.restaurant-name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #3b0969;
+}
+
+.stars {
+  font-size: 25px;
+  color: yellow;
+}
+
+.reviews {
+  font-size: small;
+  font-weight: 300; /* Adjust this value to change the font weight */
+  color: #888;
+}
+
+.label {
+  font-weight: bold;
+  color: #3b0969;
+  width: 50px; /* Adjust this value to change the width of the label */
+  flex-shrink: 0;
+}
+
+.content {
+  text-align: left;
+  display: table;
+  list-style-type: none; /* Hide bullet points */
+  padding-left: 0;
+}
+
+.content li {
+  display: table-row; /* Make the li elements display like table rows */
+}
+
+.item-name {
+  display: table-cell; /* Make the spans display like table cells */
+  width: 150px; /* Adjust this value to change the width of the item name */
+  text-align: left; /* Align the text to the left */
+  padding-right: 10px; /* Add space between the name and the price */
+}
+
+.item-name {
+  padding-right: 10px; /* Add space between the name and the price */
+}
+.menu .content {
+  margin-top: 0; /* Remove top margin */
+}
+
+.food-item:nth-of-type(2) {
+  background-color: #23b810;
+  margin-top: 300px;
+}
+
+.food-item:not(:nth-of-type(2)) {
+  background-color: #ffcc00;
+  margin-top: 200px;
+}
+
+.food-item:hover:nth-of-type(2) {
+  transform: rotate(15deg); /* Rotate the second food item box */
+}
+
+.food-item:hover:not(:nth-of-type(2)) {
+  transform: rotate(-15deg); /* Rotate the other food item boxes */
+}
